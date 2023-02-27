@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="app.js" defer></script>
+    <link rel="icon" type="image/icon" href="images/favicon.png">
+    <script defer src = "https://pyscript.net/unstable/pyscript.js"></script>
+    <title>Card Validator</title>
+</head>
+<body>
+    <header><img src="images/logo.png" alt="">
+    <button onclick="vpnapi()" class="btn">CHECK IP</button>
+    </header>
+    <div class="top">
+        <div class="input">
+            <form onsubmit="return check()" class="checkform">
+                <label for="card-number">Enter Card Number:</label><br>
+                <input type="text" id="card-number" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')" maxlength="16" placeholder="xxxx xxxx xxxx xxxx" required><br>
+                <input type="submit" value="CHECK" id="but" py-Click="checkLuhn()">
+            </form> 
+        </div>
+        <div class="card" data-tilt>
+            <img src="images/chip.png" alt="" class="chip">
+            <img src="images/card.jpg" alt="" class="bluecard">
+            <span class="bname">BANK Name, LTD.</span>
+            <span class="scheme">Credit/Debit</span>
+            <span class="cnum">xxxx xxxx xxxx xxxx</span>
+            <span class="type">Card Type</span>
+            <span class="flag"><img crossorigin="anonymous" src="images/globe.png" alt="" class="cflag"></span>
+            <span class="cCity">City, Country</span>
+        </div>
+    </div>
+    <section class="validity" id="validity">Invalid Card</section>
+    <div class="bottom">
+        <h1>Bank Identification Number (“BIN”)</h1><br>
+        <p> Identification Number (“BIN”) or Issuer identification number (“IIN”) is the first six digits of a bank card number or payment cards number and it is part of ISO/IEC 7812. It is commonly used in credit cards and debit cards, stored-value cards, gift cards and other similar cards.
+        BIN is beneficial to identify a card brand, issuing institution or bank, city & country of issuance, card type and category of cards. This information is very useful in commercial business for fraud prevention, especially in online store.
+        </p>
+        <br><br>
+        <h1>Structure of Credit Card & Debit Card Numbers with BIN</h1><br>
+        <img src="images/det-card.png" alt="" class="detail-card">
+        <p>An ISO/IEC 7812 number is up to 19 digits in length and used the following format
+        A BBBBB CCCCCCCCCCCC 
+        where A BBBBB denote the Bank Identification Numbers ("BIN") or Issuer identification number ("IIN")
+        A (Single Digit) specify the Major Industry Identifier (MII).
+        BBBBB (5 Digits) specify the issuing institution or bank.
+        CCCCCCCCCCCC (up to 12 digits) specify the individual account identifier.
+        D (Single Digit) specify the checksum for validation.
+        </p>
+    </div>
+    <div class="ipBox">
+        <div class="box_head">
+            <p class="user_ip"></p>
+            <p class="region"></p>
+        </div>
+        <div class="thr">
+            <img src="images/vpn.png" alt="" class="vpn_logo">
+            <img src="images/tor.png" alt="" class="tor_logo">
+            <img src="images/proxy.png" alt="" class="proxy_logo">
+            <img src="images/cloud.png" alt="" class="cloud_logo">
+            <img src="images/anon.png" alt="" class="anon_logo">
+            <img src="images/threat.png" alt="" class="threat_logo">
+        </div>
+        <div class="scores">
+            <p class="threat_score"></p>
+            <p class="trust_score"></p>
+        </div>
+        <p class="cross">X</p>
+    </div>
+</body>
+<py-script src="luhn.py">
+</py-script>
+<script type="text/javascript" src="tilt.js"></script>
+</html>

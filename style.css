@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato;
+}
+
+:root{
+ --valid : red;
+ --display : none;
+}
+
+
+header{
+    height: 5.4rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.251);
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 25px;
+    letter-spacing: 0.06em;
+    padding: 15px;
+    border-bottom: 4px solid #256FFF;
+}
+
+.top{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.input{
+    width: 40%;
+}
+
+form{
+    padding: 30px;
+    font-size: 54px;
+}
+
+#card-number{
+    margin-top: 50px;
+    border: 2px none black;
+    margin-bottom: 50px;
+    font-size: 34px;
+    box-shadow: 3px 5px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding-left: 15px;
+    width: 100%;
+    height: 90px;
+    letter-spacing: 5px;
+}
+
+
+input[type=submit]{
+    font-weight: bold;
+    background: #256FFF;
+    border: none;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 15px;
+    width: 150px;
+    color: white;
+    cursor: pointer;
+    font-size: 26px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    transition: all .3s ease-in;
+}
+#but{
+    font-family: monospace;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    height: 60px;
+    transition: .3s;
+}
+#but:hover{
+    /* background: #0c5af5;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.434); */
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 7px #3b83f65f;
+    color: #fff;
+}
+
+.card{
+    text-shadow: 2px 2px 3px #535353;
+    position: relative;
+    height: 350px;
+    width: 590px;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 0px 50px 100px -10px rgba(50, 50, 93, 0.756) , 
+                0px 30px 60px -20px rgba(0, 0, 0, 0.664), 
+                0px -2px 6px 5px rgba(10, 37, 64, 0.664) inset;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+
+.chip{
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    height: 60px;
+    width: 75px;
+    transform: translateZ(20px);
+}
+
+.bluecard{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+
+.bname,.scheme,.type,.cnum,.cCity{
+    position: absolute;
+    color: white;
+}
+
+.bname{
+    top: 30px;
+    font-weight: 600;
+    right: 20px;
+    font-size: 22px;
+    width: 65%;
+    text-align: right;
+    word-wrap: break-word;
+}
+
+.scheme{
+    top: 110px;
+    right: 20px;
+    font-size: 21px;
+}
+
+.cnum{
+    top: 185px;
+    font-size: 38px;
+    letter-spacing: 8px;
+    left: 52px;
+}
+
+.type{
+    top: 285px;
+    right: 25px;
+    font-size: 25px;
+}
+
+.flag{
+    position: absolute;
+    top: 255px;
+    left: 30px;
+    height: 80px;
+    width: 80px;
+    z-index: 100;
+    overflow: hidden;
+    border-radius: 50%;
+    transform: translateZ(20px);
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.flag img{
+    height: 80px;
+    width: 80px;
+}
+
+.cCity{
+    position: absolute;
+    top: 285px;
+    left: 130px;
+    z-index: 999;
+    font-size: 25px;
+}
+
+.validity{
+    display: var(--display);
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: var(--valid);
+    box-shadow: 0 0 5px var(--valid);
+    font-size: 34px;
+    width: 300px;
+    border: 2px solid var(--valid);
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0%{
+        box-shadow: 0px 0px 10px var(--valid);
+    }
+    100%{
+        box-shadow: 0px 0px 25px var(--valid);
+    }
+}
+
+.cshake{
+    animation: shake 0.35s;
+}
+
+@keyframes shake{
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+.bottom{
+    width: 53%;
+    margin-top: 140px;
+    line-height: 25px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.bottom p{
+    font-size: large;
+    line-height: 45px;
+}
+
+.detail-card{
+    width: 45em;
+    height: 31em;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+/* ------------------------API---------------------- */
+.btn{
+    font-family: monospace;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    margin-left: 90%;
+    position: absolute;
+    top:4%;
+    left:0;
+  }
+  
+  .btn:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 6px #3b83f65f;
+    color: #fff;
+  }
+  
+  .ipBox{
+    background: linear-gradient(330deg, rgba(40,255,242,1) 0%, rgba(95,107,254,1) 39%, rgba(98,98,255,1) 61%, rgba(0,255,136,1) 100%);    height: 70vh;
+    width: 60vw;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    border-radius: 20px;
+    transform: translateX(-50%);
+    box-shadow: 5px 3px 25px rgba(0, 0, 0, 0.6);
+    /* display: none; */
+}
+
+.box_head{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.user_ip{
+    font-size: 3rem;
+    margin-bottom: 19px;
+}
+
+.region{
+    font-size: 2rem;
+}
+
+.thr{
+    margin-top: 110px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.thr img{
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    /* background-color: red; */
+}
+
+.cross{
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 1.8rem;
+    color: wheat;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.scores{
+    position: absolute;
+    top: 70%;
+    right: 80px;
+    font-size: 1.8rem;
+    color: wheat;
+    font-weight: bolder;
+}
