@@ -261,7 +261,7 @@ input[type=submit]{
     border-radius: 20px;
     transform: translateX(-50%);
     box-shadow: 5px 3px 25px rgba(0, 0, 0, 0.6);
-    /* display: none; */
+    display: none;
 }
 
 .box_head{
